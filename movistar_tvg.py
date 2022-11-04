@@ -1046,7 +1046,7 @@ class XMLTV:
         gens = self.__get_genre_and_subgenre(program["genre"])
         keys = self.__get_key_and_subkey(program["genre"], config["genres"])
         # Series
-        if program["is_serie"] or program["serie_id"] > 0:
+        if program["is_serie"] or (program["serie_id"] and program["serie_id"] > 0):
             tsse = self.__get_series_data(program, ext_info)
             tag_title.text = tsse["title"]
             tag_stitle = SubElement(tag_programme, "sub-title", lang["es"])
