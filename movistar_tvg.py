@@ -915,7 +915,7 @@ class MulticastIPTV:
                 prev_end = prev_timestamp = 0
                 sorted_epg = sorted(epg[channel])
                 for timestamp in sorted_epg:
-                    if prev_end > timestamp:
+                    if prev_end > int(timestamp):
                         if (
                             epg[channel][prev_timestamp]["duration"] > 3600
                             and abs(timestamp - prev_end) < 181
